@@ -39,14 +39,14 @@ class Stream(object):
         self.label.setObjectName("label")
 
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(50, 135, 121, 41))
+        self.pushButton_2.setGeometry(QtCore.QRect(50, 150, 121, 41))
         self.pushButton_2.setStyleSheet("font:22px;")
         self.pushButton_2.setObjectName("pushButton_2")
 
-        self.pushButton_2_1 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2_1.setGeometry(QtCore.QRect(50, 180, 121, 41))
-        self.pushButton_2_1.setStyleSheet("font:22px;")
-        self.pushButton_2_1.setObjectName("pushButton_2_1")
+        # self.pushButton_2_1 = QtWidgets.QPushButton(self.centralwidget)
+        # self.pushButton_2_1.setGeometry(QtCore.QRect(50, 180, 121, 41))
+        # self.pushButton_2_1.setStyleSheet("font:22px;")
+        # self.pushButton_2_1.setObjectName("pushButton_2_1")
 
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(340, 25, 350, 82))
@@ -69,7 +69,7 @@ class Stream(object):
         self.line_2.setObjectName("line_2")
 
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(170, 135, 321, 41))
+        self.lineEdit_3.setGeometry(QtCore.QRect(170, 150, 321, 41))
         self.lineEdit_3.setObjectName("lineEdit_3")
 
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
@@ -114,7 +114,7 @@ class Stream(object):
         # self.label_6.setObjectName("label_6")
         self.label.raise_()
         self.pushButton_2.raise_()
-        self.pushButton_2_1.raise_()
+        # self.pushButton_2_1.raise_()
         self.line.raise_()
         self.line_2.raise_()
         self.label_2.raise_()
@@ -148,7 +148,7 @@ class Stream(object):
 
         # 按钮关联函数
         self.pushButton_2.clicked.connect(self.openVideo)
-        self.pushButton_2_1.clicked.connect(self.saveVideo)
+        # self.pushButton_2_1.clicked.connect(self.saveVideo)
         self.pushButton_3.clicked.connect(self.startAction)
         self.pushButton_4.clicked.connect(self.realTime)
 
@@ -157,7 +157,7 @@ class Stream(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "detection"))
         self.pushButton_2.setText(_translate("MainWindow", "video"))
-        self.pushButton_2_1.setText(_translate("MainWindow", "save"))
+        # self.pushButton_2_1.setText(_translate("MainWindow", "save"))
         self.label_2.setText(_translate("MainWindow", "video detection"))
         self.pushButton_3.setText(_translate("MainWindow", "start"))
         self.pushButton_4.setText(_translate("MainWindow", "realtime"))
