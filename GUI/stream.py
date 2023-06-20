@@ -12,7 +12,7 @@ import sys
 # from enterTest1 import FirstWindowActions
 
 
-class Ui_MainWindow(object):
+class Stream(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         # 给MainWindow设置图标

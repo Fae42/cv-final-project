@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -16,7 +15,7 @@ from PyQt5.QtGui import QPalette
 # lineEdit_3 lineEdit_3_1 分别显示输入图像的名字
 
 
-class Ui_MainWindow(object):
+class Verify(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         # 给MainWindow设置图标
@@ -50,7 +49,6 @@ class Ui_MainWindow(object):
         self.pushButton_2_1.setStyleSheet("font:22px;")
         self.pushButton_2_1.setObjectName("pushButton_2_1")
 
-
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(340, 30, 350, 81))
         self.label_2.setStyleSheet("font: 75 26pt \"Segoe Print\";\n"
@@ -81,7 +79,6 @@ class Ui_MainWindow(object):
         self.pushButton_3.setStyleSheet("font: 22px;")
         self.pushButton_3.setObjectName("pushButton_3")
 
-
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(50, 280, 411, 421))
         self.label_3.setStyleSheet("font:28px;\n"
@@ -93,14 +90,14 @@ class Ui_MainWindow(object):
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
 
-        self.label_result= QtWidgets.QLabel(self.centralwidget)
+        self.label_result = QtWidgets.QLabel(self.centralwidget)
         self.label_result.setGeometry(QtCore.QRect(725, 135, 200, 60))
         self.label_result.setStyleSheet("font:28px;\n"
-                                   "border-style:solid;\n"
-                                   "border-width:1px;\n"
-                                   "border-color:rgb(45, 45, 45);\n"
-                                   "\n"
-                                   "")
+                                        "border-style:solid;\n"
+                                        "border-width:1px;\n"
+                                        "border-color:rgb(45, 45, 45);\n"
+                                        "\n"
+                                        "")
         self.label_result.setText("")
         self.label_result.setObjectName("label_result")
 
@@ -139,7 +136,6 @@ class Ui_MainWindow(object):
         self.label_result.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -158,11 +154,8 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "img verification"))
         self.pushButton_3.setText(_translate("MainWindow", "start"))
 
-
-
         self.label_5.setText(_translate("MainWindow", "image1"))
         self.label_6.setText(_translate("MainWindow", "image2"))
-
 
     # 读取第一张图片 响应连接
     def openImage_1(self):
@@ -179,15 +172,14 @@ class Ui_MainWindow(object):
         # 显示所选图片的路径
         self.lineEdit_3.setText(imgNamepath)
 
-
-    #读取第二章图片 相应连接
+    # 读取第二章图片 相应连接
     def openImage_2(self):
         global imgNamepath_1  # 这里为了方便别的地方引用图片路径，将其设置为全局变量
         # 弹出一个文件选择框，第一个返回值imgName记录选中的文件路径+文件名，第二个返回值imgType记录文件的类型
         # QFileDialog就是系统对话框的那个类第一个参数是上下文，第二个参数是弹框的名字，第三个参数是默认打开的路径，第四个参数是需要的格式
         imgNamepath_1, imgType = QFileDialog.getOpenFileName(self.centralwidget, "选择图片",
-                                                           "D:\\python\\RRJ\\pycharmproject\\Practice\\chep2\\Image",
-                                                           "*.jpg;;*.png;;All Files(*)")
+                                                             "D:\\python\\RRJ\\pycharmproject\\Practice\\chep2\\Image",
+                                                             "*.jpg;;*.png;;All Files(*)")
         # 通过文件路径获取图片文件，并设置图片长宽为label控件的长、宽
         img = QtGui.QPixmap(imgNamepath_1).scaled(self.label_4.width(), self.label_4.height())
         # 在label控件上显示选择的图片
@@ -195,12 +187,11 @@ class Ui_MainWindow(object):
         # 显示所选图片的路径
         self.lineEdit_3_1.setText(imgNamepath_1)
 
-
     # 开始 相应连接
     def startAction(self):
         img = cv2.imread(imgNamepath)
         img_1 = cv2.imread(imgNamepath_1)
-        result=DeepFace.verify(img,img_1)
+        result = DeepFace.verify(img, img_1)
 
         first_key = next(iter(result))  # 获取字典的第一个键
         first_value = result[first_key]  # 获取第一个键对应的值
@@ -208,14 +199,13 @@ class Ui_MainWindow(object):
         self.label_result.setText(str(first_value))
 
 
-
 import sys
 
 # ***Notice*** 这里后面要接到主页面上
-if __name__=='__main__':
-    app=QtWidgets.QApplication(sys.argv)
-    mainWindow=QtWidgets.QMainWindow()
-    ui=Ui_MainWindow()
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    mainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
     ui.setupUi(mainWindow)
     mainWindow.show()
     sys.exit(app.exec_())
