@@ -4,6 +4,7 @@ import sys
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from GUI.attribute import Attribute
 from GUI.detect import Detect
 from GUI.find import Find
 from GUI.stream import Stream
@@ -79,8 +80,7 @@ class FirstWindowActions(Ui_MainWindow, QMainWindow):
         self.setupUi(self)
 
     def btnAttribute_Clicked(self):
-        # TODO
-        # self.scend_window =
+        self.scend_window = Attribute_Action()
         self.scend_window.show()
         self.close()
 
@@ -102,6 +102,17 @@ class FirstWindowActions(Ui_MainWindow, QMainWindow):
     def btnVerify_Clicked(self):
         self.scend_window = Verify_Action()
         self.scend_window.show()
+        self.close()
+
+class Attribute_Action(Attribute, QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        # self.back.clicked.connect(self.go_back)
+
+    def go_back(self):
+        self.window = FirstWindowActions()
+        self.window.show()
         self.close()
 
 class Stream_Action(Stream, QMainWindow):
