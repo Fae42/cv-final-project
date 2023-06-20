@@ -179,7 +179,7 @@ class Ui_MainWindow(object):
                                            # (224, 224),
                                            # backends[4]
                                            )
-        print('-------')
+        # print('-------')
         # print(face_objs)
         # # 图像转灰度图像
         # gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
