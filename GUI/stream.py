@@ -19,13 +19,11 @@ class Stream(object):
         MainWindow.setWindowIcon(QIcon('D:\\download\\xj.ico'))  # 路径错误找不到问题所在
 
         # 给MainWindow设置背景图片
-        # palette = QPalette()
-        # palette.setBrush(QPalette.Background, QBrush(QPixmap('D:\\python\\RRJ\\pycharmproject\\Practice\\chep2\\bdd'
-        #                                                      '\\background3.jpg')))
-        # MainWindow.setPalette(palette)
+        palette = QPalette()
+        palette.setBrush(QPalette.Background, QBrush(QPixmap("background.jpg")))
+        MainWindow.setPalette(palette)
 
         MainWindow.resize(994, 783)
-
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
 
