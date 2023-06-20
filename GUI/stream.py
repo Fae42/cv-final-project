@@ -154,6 +154,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.clicked.connect(self.startAction)
         self.pushButton_4.clicked.connect(self.realTime)
 
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "detection"))
