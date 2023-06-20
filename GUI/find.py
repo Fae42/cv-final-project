@@ -17,7 +17,7 @@ import os
 # lineEdit_3 lineEdit_3_1 分别显示输入图像的名字
 
 
-class Ui_MainWindow(object):
+class Find(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         # 给MainWindow设置图标
