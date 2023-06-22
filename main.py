@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys
 
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QPalette, QBrush, QPixmap
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from GUI.attribute import Attribute
@@ -25,24 +26,47 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(210, 40, 391, 121))
-        self.textBrowser.setObjectName("textBrowser")
         self.btnAttribute = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAttribute.setGeometry(QtCore.QRect(360, 320, 75, 23))
+        self.btnAttribute.setGeometry(QtCore.QRect(59, 230, 190, 60))
+        font = QtGui.QFont()
+        font.setFamily("Agency FB")
+        font.setPointSize(18)
+        self.btnAttribute.setFont(font)
         self.btnAttribute.setObjectName("btnAttribute")
         self.btnStream = QtWidgets.QPushButton(self.centralwidget)
-        self.btnStream.setGeometry(QtCore.QRect(360, 360, 75, 23))
+        self.btnStream.setGeometry(QtCore.QRect(310, 230, 190, 60))
+        font = QtGui.QFont()
+        font.setFamily("Agency FB")
+        font.setPointSize(18)
+        self.btnStream.setFont(font)
         self.btnStream.setObjectName("btnStream")
         self.btnDetect = QtWidgets.QPushButton(self.centralwidget)
-        self.btnDetect.setGeometry(QtCore.QRect(360, 400, 75, 23))
+        self.btnDetect.setGeometry(QtCore.QRect(560, 230, 190, 60))
+        font = QtGui.QFont()
+        font.setFamily("Agency FB")
+        font.setPointSize(18)
+        self.btnDetect.setFont(font)
         self.btnDetect.setObjectName("btnDetect")
         self.btnFind = QtWidgets.QPushButton(self.centralwidget)
-        self.btnFind.setGeometry(QtCore.QRect(360, 440, 75, 23))
+        self.btnFind.setGeometry(QtCore.QRect(60, 350, 190, 60))
+        font = QtGui.QFont()
+        font.setFamily("Agency FB")
+        font.setPointSize(18)
+        self.btnFind.setFont(font)
         self.btnFind.setObjectName("btnFind")
         self.btnVerify = QtWidgets.QPushButton(self.centralwidget)
-        self.btnVerify.setGeometry(QtCore.QRect(360, 480, 75, 23))
+        self.btnVerify.setGeometry(QtCore.QRect(310, 350, 190, 60))
+        font = QtGui.QFont()
+        font.setFamily("Agency FB")
+        font.setPointSize(18)
+        self.btnVerify.setFont(font)
         self.btnVerify.setObjectName("btnVerify")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(10, 10, 771, 161))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft YaHei")
+        self.label.setFont(font)
+        self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
@@ -60,19 +84,27 @@ class Ui_MainWindow(object):
         self.btnVerify.clicked.connect(MainWindow.btnVerify_Clicked) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        palette = QPalette()
+        palette.setBrush(QPalette.Background, QBrush(QPixmap("./GUI/background.jpg")))
+        self.setPalette(palette)
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.btnAttribute.setText(_translate("MainWindow", "Face Attribute(image)"))
+        self.btnStream.setText(_translate("MainWindow", "Face Attribute(Video)"))
+        self.btnDetect.setText(_translate("MainWindow", "Face Detector"))
+        self.btnFind.setText(_translate("MainWindow", "Facial Recognition"))
+        self.btnVerify.setText(_translate("MainWindow", "Face Verification"))
+        self.label.setText(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:48pt; font-weight:600; color:#aaaaff;\">Deep Face</span></p></body></html>"))
-        self.btnAttribute.setText(_translate("MainWindow", "attribute"))
-        self.btnStream.setText(_translate("MainWindow", "stream"))
-        self.btnDetect.setText(_translate("MainWindow", "人脸检测"))
-        self.btnFind.setText(_translate("MainWindow", "find"))
-        self.btnVerify.setText(_translate("MainWindow", "verify"))
+"</style></head><body style=\" font-family:\'Microsoft YaHei\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun\'; font-size:36pt; font-weight:600; color:#3068ea;\">Deepface</span></p>\n"
+"<p align=\"right\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'SimSun\';\"><br /></p>\n"
+"<p align=\"right\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'SimSun\';\"><br /></p>\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun\'; font-size:11pt; color:#3068ea;\">----Face Recognition and Facial Attribute Analysis</span></p></body></html>"))
+
 
 class FirstWindowActions(Ui_MainWindow, QMainWindow):
     def __init__(self):
