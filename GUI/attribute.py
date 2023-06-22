@@ -2,6 +2,7 @@ import json
 import sys
 import cv2
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QPalette, QBrush, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QFileDialog, QMessageBox
 from deepface import DeepFace
 
@@ -9,6 +10,11 @@ from deepface import DeepFace
 
 class Attribute(object):
     def setupUi(self, MainWindow):
+        # 给MainWindow设置背景图片
+        palette = QPalette()
+        palette.setBrush(QPalette.Background, QBrush(QPixmap("./GUI/background.jpg")))
+        MainWindow.setPalette(palette)
+
         self.img=None
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(994, 783)

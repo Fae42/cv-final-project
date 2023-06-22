@@ -23,7 +23,7 @@ class Verify(object):
 
         # 给MainWindow设置背景图片
         palette = QPalette()
-        palette.setBrush(QPalette.Background, QBrush(QPixmap("background.jpg")))
+        palette.setBrush(QPalette.Background, QBrush(QPixmap("./GUI/background.jpg")))
         MainWindow.setPalette(palette)
 
         MainWindow.resize(994, 783)
