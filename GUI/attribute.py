@@ -30,10 +30,10 @@ class Attribute(object):
                                  "")
         self.label.setText("")
         self.label.setObjectName("label")
-        # self.back = QtWidgets.QPushButton(self.centralwidget)  # go back
-        # self.back.setGeometry(QtCore.QRect(20, 10, 80, 35))
-        # self.back.setStyleSheet("font:22px;")
-        # self.back.setObjectName("pushButton_2")
+        self.back = QtWidgets.QPushButton(self.centralwidget)  # go back
+        self.back.setGeometry(QtCore.QRect(20, 10, 80, 35))
+        self.back.setStyleSheet("font:22px;")
+        self.back.setObjectName("btn_back")
 
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)  # select pic/vid
         self.pushButton_2.setGeometry(QtCore.QRect(30, 150, 230, 41))
@@ -116,7 +116,7 @@ class Attribute(object):
         self.emotion.raise_()
         self.label_5.raise_()
         self.label_6.raise_()
-        # self.back.raise_()
+        self.back.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 994, 26))
@@ -144,13 +144,13 @@ class Attribute(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "CS308 project"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Attribute"))
         self.pushButton_2.setText(_translate("MainWindow", "Select picture/video"))
-        self.label_2.setText(_translate("MainWindow", "Face Analysis"))
+        self.label_2.setText(_translate("MainWindow", "Face Attribute"))
         self.pushButton_3.setText(_translate("MainWindow", "Start"))
-        self.label_5.setText(_translate("MainWindow", "Input"))
-        self.label_6.setText(_translate("MainWindow", "Output"))
-        # self.back.setText(_translate("MainWindow", "Back"))
+        self.label_5.setText(_translate("MainWindow", "Input image"))
+        self.label_6.setText(_translate("MainWindow", "Result"))
+        self.back.setText(_translate("MainWindow", "Back"))
 
     # 选择本地图片上传
     def openImage(self):

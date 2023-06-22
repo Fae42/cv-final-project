@@ -90,7 +90,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "CS308 project"))
         self.btnAttribute.setText(_translate("MainWindow", "Face Attribute(image)"))
         self.btnStream.setText(_translate("MainWindow", "Face Attribute(Video)"))
         self.btnDetect.setText(_translate("MainWindow", "Face Detector"))
@@ -140,7 +140,7 @@ class Attribute_Action(Attribute, QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        # self.back.clicked.connect(self.go_back)
+        self.back.clicked.connect(self.go_back)
 
     def go_back(self):
         self.window = FirstWindowActions()
@@ -151,7 +151,7 @@ class Stream_Action(Stream, QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        # self.back.clicked.connect(self.go_back)
+        self.back.clicked.connect(self.go_back)
 
     def go_back(self):
         self.window = FirstWindowActions()
@@ -162,7 +162,7 @@ class Detect_Action(Detect, QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        # self.back.clicked.connect(self.go_back)
+        self.back.clicked.connect(self.go_back)
 
     def go_back(self):
         self.window = FirstWindowActions()
@@ -173,7 +173,7 @@ class Find_Action(Find, QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        # self.back.clicked.connect(self.go_back)
+        self.back.clicked.connect(self.go_back)
 
     def go_back(self):
         self.window = FirstWindowActions()
@@ -184,7 +184,7 @@ class Verify_Action(Verify, QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        # self.back.clicked.connect(self.go_back)
+        self.back.clicked.connect(self.go_back)
 
     def go_back(self):
         self.window = FirstWindowActions()

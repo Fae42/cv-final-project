@@ -36,6 +36,12 @@ class Detect(object):
                                  "")
         self.label.setText("")
         self.label.setObjectName("label")
+
+        self.back = QtWidgets.QPushButton(self.centralwidget)  # go back
+        self.back.setGeometry(QtCore.QRect(20, 10, 80, 35))
+        self.back.setStyleSheet("font:22px;")
+        self.back.setObjectName("btn_back")
+
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(50, 150, 121, 41))
         self.pushButton_2.setStyleSheet("font:22px;")
@@ -108,6 +114,7 @@ class Detect(object):
         self.label_4.raise_()
         self.label_5.raise_()
         self.label_6.raise_()
+        self.back.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 994, 26))
@@ -136,7 +143,7 @@ class Detect(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "detection"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Detection"))
         self.pushButton_2.setText(_translate("MainWindow", "choose img"))
         self.label_2.setText(_translate("MainWindow", "img detection"))
         self.pushButton_3.setText(_translate("MainWindow", "start"))
@@ -146,6 +153,7 @@ class Detect(object):
         # self.menutest2.setTitle(_translate("MainWindow", "test2"))
         self.actiondemo1.setText(_translate("MainWindow", "demo1"))
         self.actiondemo2.setText(_translate("MainWindow", "demo2"))
+        self.back.setText(_translate("MainWindow", "Back"))
 
     # 选择本地图片上传
     def openImage(self):

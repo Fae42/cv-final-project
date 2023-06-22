@@ -41,6 +41,12 @@ class Find(object):
                                  "")
         self.label.setText("")
         self.label.setObjectName("label")
+
+        self.back = QtWidgets.QPushButton(self.centralwidget)  # go back
+        self.back.setGeometry(QtCore.QRect(20, 10, 80, 35))
+        self.back.setStyleSheet("font:22px;")
+        self.back.setObjectName("btn_back")
+
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(50, 135, 121, 41))
         self.pushButton_2.setStyleSheet("font:22px;")
@@ -138,6 +144,7 @@ class Find(object):
         self.label_5.raise_()
         self.label_6.raise_()
         self.label_result.raise_()
+        self.back.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
 
@@ -152,7 +159,7 @@ class Find(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "verification"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Find"))
         self.pushButton_2.setText(_translate("MainWindow", "image"))
         self.pushButton_2_1.setText(_translate("MainWindow", "dataset"))
 
@@ -163,6 +170,8 @@ class Find(object):
 
         self.label_5.setText(_translate("MainWindow", "image"))
         self.label_6.setText(_translate("MainWindow", "dataset"))
+
+        self.back.setText(_translate("MainWindow", "Back"))
 
 
     # 读取第一张图片 响应连接
