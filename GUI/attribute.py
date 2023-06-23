@@ -22,12 +22,10 @@ class Attribute(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(10, 0, 961, 721))
-        self.label.setStyleSheet("font:28px;\n"
-                                 "border-style:solid;\n"
-                                 "border-width:1px;\n"
-                                 "border-color:rgb(0, 0, 0);\n"
-                                 "\n"
-                                 "")
+        self.label.setStyleSheet("font: 75 26pt \"Segoe Print\";\n"
+                                "color:rgb(255, 85, 0);\n"
+                                   "text-align:center;\n"
+                                   "letter-spacing:4pt;")
         self.label.setText("")
         self.label.setObjectName("label")
         self.back = QtWidgets.QPushButton(self.centralwidget)  # go back
@@ -41,7 +39,7 @@ class Attribute(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(350, 30, 700, 81))
-        self.label_2.setStyleSheet("font: 45px;\n"
+        self.label_2.setStyleSheet("font: 75 26pt \"Segoe Print\";\n"
                                    "color:rgb(255, 85, 0);\n"
                                    "text-align:center;\n"
                                    "letter-spacing:4pt;")

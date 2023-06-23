@@ -23,50 +23,85 @@ from GUI.verify import Verify
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(600, 640)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.btnAttribute = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAttribute.setGeometry(QtCore.QRect(59, 230, 190, 60))
+        self.btnAttribute.setGeometry(QtCore.QRect(125, 210, 350, 60))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(18)
         self.btnAttribute.setFont(font)
         self.btnAttribute.setObjectName("btnAttribute")
         self.btnStream = QtWidgets.QPushButton(self.centralwidget)
-        self.btnStream.setGeometry(QtCore.QRect(310, 230, 190, 60))
+        self.btnStream.setGeometry(QtCore.QRect(125, 290, 350, 60))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(18)
         self.btnStream.setFont(font)
         self.btnStream.setObjectName("btnStream")
         self.btnDetect = QtWidgets.QPushButton(self.centralwidget)
-        self.btnDetect.setGeometry(QtCore.QRect(560, 230, 190, 60))
+        self.btnDetect.setGeometry(QtCore.QRect(125, 370, 350, 60))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(18)
         self.btnDetect.setFont(font)
         self.btnDetect.setObjectName("btnDetect")
         self.btnFind = QtWidgets.QPushButton(self.centralwidget)
-        self.btnFind.setGeometry(QtCore.QRect(60, 350, 190, 60))
+        self.btnFind.setGeometry(QtCore.QRect(125, 450, 350, 60))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(18)
         self.btnFind.setFont(font)
         self.btnFind.setObjectName("btnFind")
         self.btnVerify = QtWidgets.QPushButton(self.centralwidget)
-        self.btnVerify.setGeometry(QtCore.QRect(310, 350, 190, 60))
+        self.btnVerify.setGeometry(QtCore.QRect(125, 530, 350, 60))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(18)
         self.btnVerify.setFont(font)
         self.btnVerify.setObjectName("btnVerify")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(10, 10, 771, 161))
-        font = QtGui.QFont()
-        font.setFamily("Microsoft YaHei")
-        self.label.setFont(font)
-        self.label.setObjectName("label")
+
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(10, 168, 580, 20))
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.line.raise_()
+        self.line1 = QtWidgets.QFrame(self.centralwidget)
+        self.line1.setGeometry(QtCore.QRect(10, 165, 580, 20))
+        self.line1.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line1.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line1.setObjectName("line")
+        self.line1.raise_()
+        self.line2 = QtWidgets.QFrame(self.centralwidget)
+        self.line2.setGeometry(QtCore.QRect(10, 162, 580, 20))
+        self.line2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line2.setObjectName("line")
+        self.line2.raise_()
+
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(200, 30, 350, 81))
+        self.label_2.setStyleSheet("font: 75 26pt \"Segoe Print\";\n"
+                                   "color:rgb(255, 85, 0);\n"
+                                   "text-align:center;\n"
+                                   "letter-spacing:4pt;")
+        self.label_2.setObjectName("label_2")
+        self.label_2.raise_()
+
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(79, 110, 500, 60))
+        self.label_3.setStyleSheet("font: 25 11pt \"Segoe Print\";\n"
+                                   "color:rgb(255, 85, 0);\n"
+                                   "text-align:center;\n"
+                                   "letter-spacing:4pt;")
+        self.label_3.setObjectName("label_2")
+        self.label_3.raise_()
+
+
+
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
@@ -92,19 +127,12 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "CS308 project"))
         self.btnAttribute.setText(_translate("MainWindow", "Face Attribute(image)"))
-        self.btnStream.setText(_translate("MainWindow", "Face Attribute(Video)"))
-        self.btnDetect.setText(_translate("MainWindow", "Face Detector"))
-        self.btnFind.setText(_translate("MainWindow", "Facial Recognition"))
+        self.btnStream.setText(_translate("MainWindow", "Video Face Detector"))
+        self.btnDetect.setText(_translate("MainWindow", "Image Face Detector"))
+        self.btnFind.setText(_translate("MainWindow", "Find Matching Faces"))
         self.btnVerify.setText(_translate("MainWindow", "Face Verification"))
-        self.label.setText(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Microsoft YaHei\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun\'; font-size:36pt; font-weight:600; color:#3068ea;\">Deepface</span></p>\n"
-"<p align=\"right\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'SimSun\';\"><br /></p>\n"
-"<p align=\"right\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'SimSun\';\"><br /></p>\n"
-"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'SimSun\'; font-size:11pt; color:#3068ea;\">----Face Recognition and Facial Attribute Analysis</span></p></body></html>"))
-
+        self.label_2.setText(_translate("MainWindow", "DeepFace"))
+        self.label_3.setText(_translate("MainWindow", "<<< A facial recognition and analysis system >>>"))
 
 class FirstWindowActions(Ui_MainWindow, QMainWindow):
     def __init__(self):
@@ -198,3 +226,4 @@ if __name__ == '__main__':
     MainWindow.show()  # 显示窗体
 
     sys.exit(app.exec_())  # 程序关闭时退出进程
+
