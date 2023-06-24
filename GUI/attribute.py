@@ -28,12 +28,12 @@ class Attribute(object):
                                    "letter-spacing:4pt;")
         self.label.setText("")
         self.label.setObjectName("label")
-        self.back = QtWidgets.QPushButton(self.centralwidget)  # go back
+        self.back = QtWidgets.QPushButton(self.centralwidget)
         self.back.setGeometry(QtCore.QRect(20, 10, 80, 35))
         self.back.setStyleSheet("font:22px;")
         self.back.setObjectName("btn_back")
 
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)  # select pic/vid
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(30, 150, 230, 41))
         self.pushButton_2.setStyleSheet("font:22px;")
         self.pushButton_2.setObjectName("pushButton_2")
@@ -54,7 +54,7 @@ class Attribute(object):
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)  # input path showing
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_3.setGeometry(QtCore.QRect(260, 150, 250, 41))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
@@ -159,7 +159,6 @@ class Attribute(object):
         self.emotion.setText("Emotion: ")
         global imgNamepath
         imgNamepath, imgType = QFileDialog.getOpenFileName(self.centralwidget)
-        # 通过文件路径获取图片文件，并设置图片长宽为label控件的长、宽
         img = None
         if imgNamepath[-3:] == 'mp4':
             vc = cv2.VideoCapture(imgNamepath)
@@ -179,7 +178,6 @@ class Attribute(object):
     def startAction(self):
         print('Loading model...')
         demography = DeepFace.analyze(self.img, enforce_detection=False)
-        print(demography)
         age = demography[0]["age"]
         print(age)
         gender = str(demography[0]["dominant_gender"])

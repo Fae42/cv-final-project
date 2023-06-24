@@ -6,6 +6,8 @@ This is a Final project of 2023 spring CS308(Computer Vision) course. It include
 
 The GUI program has implemented some main features of [`Deepface`](https://github.com/serengil/deepface) such as `Face detect`, `Face attribute`, `Face matching` and `Face verification`.
 
+The detail of experiments can be found in our report.
+
 ## Set up
 
 You can run the following command to import the required environment by `conda`:
@@ -37,4 +39,4 @@ After choosing a picture or video, click the `Start` bottom. The result will dis
 
 Other functions have similar usage.
 
-_Note: this program needs some pre-train weight files to run. These files are large (hundreds of MB) and require some time to download, which depends on your network state._
+_Note: this program needs some pre-train weight files to run. These files are large (~500 MB each) and require some time to download, which depends on your network state._
