@@ -6,7 +6,7 @@ This is a Final project of 2023 spring CS308(Computer Vision) course. It include
 
 The GUI program has implemented some main features of [`Deepface`](https://github.com/serengil/deepface) such as `Face detect`, `Face attribute`, `Face matching` and `Face verification`.
 
-The detail of experiments can be found in our report.
+The detail of experiments can be found in our project [`report`](https://github.com/Fae42/cv-final-project/blob/main/CV_Final_report.pdf).
 
 ## Set up
 
